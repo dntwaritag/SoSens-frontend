@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: rwanda-crop-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: true
+    
+    # Headers for security and CORS
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Permissions-Policy
+        value: camera=(), microphone=(), geolocation=()
+    
+    # Routing configuration
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
