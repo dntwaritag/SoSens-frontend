@@ -255,4 +255,5 @@ Private project for Rwanda agricultural system
 
 ## Status
 
-Production Ready | Version 2.0.0 | Last Updated: November 2024
+Production Ready | Version 2.0.0 | Last Updated: November 2025
+
